@@ -1,0 +1,118 @@
+:root {
+  /* Global Variables */
+  --color: #000000;
+  --background: #fff;
+  --line-height: 18px;
+  --small-space: 8px;
+  --medium-space: 16px;
+  --large-space: 80px;
+}
+
+html {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100%;
+  font-family: "Inter-Medium", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: var(--line-height);
+  color: var(--color);
+  -webkit-text-stroke: 12px red;
+  paint-order: stroke fill;
+}
+
+a {
+  color: var(--color);
+  text-decoration: none;
+  -webkit-text-stroke: 12px blue;
+  paint-order: stroke fill;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: var(--medium-space);
+  row-gap: var(--large-space);
+  padding: var(--small-space);
+  height: 100%;
+  margin-bottom: var(--large-space);
+}
+.flex {
+  display: flex;
+}
+.underline {
+  text-decoration: underline;
+}
+
+/* Navigation */
+
+nav {
+  width: 14vw;
+  height: 100%;
+  position: fixed;
+  padding: var(--small-space);
+}
+nav div {
+  display: flex;
+  flex-direction: column;
+}
+.nav-main {
+  position: sticky;
+  top: var(--small-space);
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--large-space);
+  height: min-content;
+}
+.nav-bottom {
+  position: fixed;
+  bottom: var(--small-space);
+}
+
+/* Projects */
+
+.project {
+  width: 100%;
+  grid-column: 3 / 13;
+
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  column-gap: var(--medium-space);
+}
+.project-info {
+  grid-column: 1 / 5;
+  position: sticky;
+  top: var(--small-space);
+  height: min-content;
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--large-space);
+
+  -webkit-text-stroke: 12px red;
+  paint-order: stroke fill;
+}
+.project-images {
+  grid-column: 5 / 11;
+  display: flex;
+  flex-direction: column;
+  gap: var(--small-space);
+}
+.project-images img {
+  width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+  .grid {
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 8px;
+    row-gap: 8px;
+    padding: 8px;
+  }
+}
